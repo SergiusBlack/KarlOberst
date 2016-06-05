@@ -1,8 +1,19 @@
 ﻿@model KarlOberstV2.Models.Genero
 
 @{
-    ViewBag.Title = "Buscar";
+    ViewBag.Title = Model.Nombre;
 }
 
-<h2>Género buscado: @Model.Nombre</h2>
+<h2>@Model.Nombre</h2>
+<section class="row">
+    @foreach (var producto in Model.Productos)
+    {
+        <article class="col-xs-6 col-md-3">
+            <a href="" class="thumbnail">
+                <img src="@producto.ImgProducto" alt="@producto.Nombre" />
+            </a>
+        </article>
+    }
 
+
+</section>

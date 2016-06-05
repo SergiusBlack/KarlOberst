@@ -24,8 +24,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Store" ? "active" : "")" >@Html.ActionLink("Tienda","Index","Store", new { area = "" }, null)</li>
-                    @*<li class="@ViewContext.RouteData.Values["Action"].ToString()"></li>*@
+                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Store" ? "active" : "")">@Html.ActionLink("Tienda", "Index", "Store", new { area = "" }, null)</li>
+                    @*<li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Store" ? "active" : "")" >@Html.ActionLink("Tienda","Index","Store", new { area = "" }, null)</li>*@
+                   
                 </ul>
             </div>
         </div>
