@@ -3,29 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using KarlOberstV2.Models;
 
 namespace KarlOberstV2.Controllers
 {
     public class StoreController : Controller
     {
         // GET: Store
-        public string Index()
+        public ActionResult Index()
         {
-            //return View();
-            return "Método indice de el controlador tienda";
+            var generos = new List<Genero>();
+            generos.Add(new Genero { Nombre = "Salchichas" });
+            generos.Add(new Genero { Nombre = "Fiambres" });
+            generos.Add(new Genero { Nombre = "Otros" });
+
+            return View(generos);
         }
 
-        public string Buscar(string genero)
+        public ActionResult Buscar(string genero)
         {
-            //return View();
-            string msg = HttpUtility.HtmlEncode("Tienda.Buscar, Genero = " + genero);
-            return msg;
+            var genModel = new Genero { Nombre = genero };
+            return View(genModel);
+
         }
 
-        public string Detalles(int id)
+        public ActionResult Detalles(int id)
         {
-            //return View();
-            return "Tienda.Detalles, ID = " + id;
+            var producto = new Producto { Nombre = "producto " + id };
+            return View(producto);
         }
     }
 }

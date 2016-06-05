@@ -1,0 +1,16 @@
+﻿@model IEnumerable<KarlOberstV2.Models.Genero>
+
+@{
+    ViewBag.Title = "Tienda";
+}
+
+<h2>Tienda</h2>
+
+<h3>Géneros disponibles: @Model.Count()</h3>
+
+<ul>
+    @foreach(var gen in Model)
+    {
+        <li>@gen.Nombre</li>
+    }
+</ul>

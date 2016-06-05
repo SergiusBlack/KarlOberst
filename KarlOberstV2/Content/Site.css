@@ -15,4 +15,19 @@ select,
 textarea {
     max-width: 280px;
 }
+/*div.navbar-header{
+    background: url(/img/1571.jpg) no-repeat top left;
+    width: 400px;
+    height: 60px;
+}*/
+
+a.navbar-brand{
+    text-indent:-9999px;
+     background: url(/img/1571.jpg) no-repeat top left;
+    width: 400px;
+    height: 63px;
+}
+
+
+
 
