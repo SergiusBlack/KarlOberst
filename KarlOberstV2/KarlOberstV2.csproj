@@ -127,6 +127,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Genero.cs" />
     <Compile Include="Models\Producto.cs" />
@@ -145,6 +146,7 @@
     <Content Include="Views\Store\Detalles.cshtml" />
     <Content Include="Views\Store\Buscar.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -156,7 +158,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="img\" />
     <Folder Include="SQL\" />
-    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
