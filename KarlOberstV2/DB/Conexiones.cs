@@ -54,7 +54,7 @@ namespace KarlOberstV2.DB
             MySqlConnection conn = new MySqlConnection("server=localhost;database=karl_oberst;uid=root;password= ;");
             conn.Open();
 
-            var query = string.Format("select * from producto where name = '{0}'", name);
+            var query = string.Format("select * from producto where id_genero = (select id_genero from genero where nombre = '{0}')", name);
 
             MySqlDataAdapter mySDA = new MySqlDataAdapter(query, conn);
             MySqlCommandBuilder mySCB = new MySqlCommandBuilder(mySDA);
@@ -67,7 +67,8 @@ namespace KarlOberstV2.DB
                 {
                     Nombre = data.Rows[i]["name"].ToString(),
                     IdGenero = int.Parse(data.Rows[i]["id_genero"].ToString()),
-                    ImgProducto = data.Rows[i]["url"].ToString()
+                    ImgProducto = data.Rows[i]["url"].ToString(),
+                    Descripcion = data.Rows[i]["description"].ToString()
 
                 });
             }

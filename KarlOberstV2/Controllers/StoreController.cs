@@ -42,11 +42,11 @@ namespace KarlOberstV2.Controllers
             return View(generos);
         }
 
-        public ActionResult Buscar(string genero)
+        public ActionResult Buscar(string genero = "Salchichas")
         {
 
             var genModel = new Genero();
-               var Gen = new Conexiones();
+            var Gen = new Conexiones();
             genModel = Gen.GetGenByName(genero);
             
             return View(genModel);

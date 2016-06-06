@@ -14,9 +14,9 @@ namespace KarlOberstV2.Models
         public Genero Genero { get; set; }
         public int IdGenero { get; set; }
         public string ImgProducto { get; set; }
+        public string Descripcion { get; set; }
+        public double Precio { get; set; }
 
-        
-        
 
     }
 }
