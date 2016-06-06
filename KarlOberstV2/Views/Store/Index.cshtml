@@ -1,29 +1,18 @@
 ﻿@model IEnumerable<KarlOberstV2.Models.Genero>
+<br />
 
+@foreach (var genero in Model)
+{
+    <article class="col-xs-6 col-md-4">
+        <a href="@Url.Action("buscar","Store", new {genero=genero.Nombre})">
+        <div class="thumbnail">
+            <img src="@genero.img" alt="@genero.Nombre" />
+            <div class="caption">
+                <h3>@genero.Nombre</h3>
+                <p>@genero.Descripcion</p>
+            </div>
+        </div>
+            </a>
+    </article>
 
-<h2>Tienda</h2>
-
-<h3>Géneros disponibles: @Model.Count()</h3>
-
-<ul>
-    
-        @foreach (var gen in Model)
-        {
-            <li>
-                @Html.ActionLink(
-       gen.Nombre,
-       "buscar",
-       "Store",
-       new
-       {
-           genero = gen.Nombre
-       },
-       new
-       {
-           @title = gen.Descripcion
-       })
-            </li>
-                @*<li>@gen.Nombre</li>*@
-                }
-            
-</ul>
+}

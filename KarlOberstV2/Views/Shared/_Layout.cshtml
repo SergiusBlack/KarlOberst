@@ -23,11 +23,14 @@
                
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-left">
                     <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")">@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, null)</li>
 
                     <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Store" ? "active" : "")">@Html.ActionLink("Productos", "Index", "Store", new { area = "" }, null)</li>
                     @*<li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Store" ? "active" : "")" >@Html.ActionLink("Tienda","Index","Store", new { area = "" }, null)</li>*@
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class=""><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                 </ul>
             </div>
         </div>
@@ -35,7 +38,9 @@
 
     <div class="container body-content">
 
-        @RenderBody()
+        <div class="row">
+            @RenderBody()
+        </div>
         <hr />
         <footer>
             <p>Karl Oberst S.L.</p>
@@ -44,5 +49,6 @@
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/Slider.js"></script>
 </body>
 </html>

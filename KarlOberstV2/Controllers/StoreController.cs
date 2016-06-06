@@ -17,18 +17,6 @@ namespace KarlOberstV2.Controllers
         // GET: Store
         public ActionResult Index()
         {
-            ////var conn = ConfigurationManager.ConnectionStrings["KarlOberstCS"].ConnectionString;
-            //var conn = new MySqlConnection("server=localhost;database=karl_oberst;uid=root;password= ;");
-            //conn.Open();
-            //MySqlCommand command = new MySqlCommand("select * from genero",conn);
-
-            //MySqlDataReader reader = command.ExecuteReader();
-            //if (reader.Read())
-            //{
-            //    var nombre = reader.GetString("nombre");
-
-            //}
-
             var con = new Conexiones();
             var tablaGeneros = con.GetGeneros();
             var generos = new List<Genero>();
@@ -36,9 +24,10 @@ namespace KarlOberstV2.Controllers
             for(var i = 0; i< tablaGeneros.Rows.Count; i++)
             {
                 generos.Add(new Genero { Nombre = tablaGeneros.Rows[i]["nombre"].ToString()
-                                        , Descripcion = tablaGeneros.Rows[i]["descripcion"].ToString()});
+                                        , Descripcion = tablaGeneros.Rows[i]["descripcion"].ToString(),
+                    img = tablaGeneros.Rows[i]["img"].ToString()
+                });
             }
-
             return View(generos);
         }
 
@@ -52,8 +41,6 @@ namespace KarlOberstV2.Controllers
             return View(genModel);
 
         }
-
-
 
         public ActionResult Detalles(int id)
         {

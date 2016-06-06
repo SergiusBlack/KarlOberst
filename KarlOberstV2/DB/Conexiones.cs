@@ -42,7 +42,9 @@ namespace KarlOberstV2.DB
             var data = new DataTable();
             mySDA.Fill(data);
             conn.Close();
-            ret = new Genero { IdGenero = int.Parse( data.Rows[0]["id_genero"].ToString()), Nombre = name, Descripcion = data.Rows[0]["descripcion"].ToString() ,Productos=prods};
+            ret = new Genero { IdGenero = int.Parse( data.Rows[0]["id_genero"].ToString()), Nombre = name,
+                Descripcion = data.Rows[0]["descripcion"].ToString() ,Productos=prods, img= data.Rows[0]["img"].ToString()
+            };
 
 
             return ret;

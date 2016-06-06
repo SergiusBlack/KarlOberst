@@ -11,5 +11,6 @@ namespace KarlOberstV2.Models
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public List<Producto> Productos { get; set; }
+        public string img { get; set; }
     }
 }
