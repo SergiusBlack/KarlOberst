@@ -12,7 +12,7 @@ namespace KarlOberstV2.DB
     public class Conexiones
     {
         
-
+        //--------------------------OBTENER-------------------------------
         public DataTable GetGeneros()
         {
             MySqlConnection conn = new MySqlConnection("server=localhost;database=karl_oberst;uid=root;password= ;");
@@ -78,6 +78,12 @@ namespace KarlOberstV2.DB
 
             return ret;
         }
+
+        //-------------------------------------------------------------------
+
+        //INSERTAR
+
+
 
     }
 }

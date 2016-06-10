@@ -6,11 +6,12 @@ using System.Web.Mvc;
 
 namespace KarlOberstV2.Controllers
 {
-    public class CartController : Controller
+    public class LoginController : Controller
     {
-        // GET: Cart
+        // GET: Login
         public ActionResult Index()
         {
+            
             return View();
         }
     }

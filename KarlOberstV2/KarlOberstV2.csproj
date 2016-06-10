@@ -110,25 +110,36 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\1571.jpg" />
+    <Content Include="img\bratwurst.jpg" />
+    <Content Include="img\frankfurt.jpg" />
+    <Content Include="img\frikadellen.jpg" />
+    <Content Include="img\gelbwurst.jpg" />
+    <Content Include="img\JAGDWURST.jpg" />
+    <Content Include="img\kracauer.jpg" />
+    <Content Include="img\nurnberger.jpg" />
+    <Content Include="img\Paprikalyoner.jpg" />
+    <Content Include="img\slider1.JPG" />
+    <Content Include="img\slider3.jpg" />
+    <Content Include="img\weisswurst.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="SQL\KarlOberst.sql" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="DB\Conexiones.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cart.cs" />
-    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Genero.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,7 +157,6 @@
     <Content Include="Views\Store\Detalles.cshtml" />
     <Content Include="Views\Store\Buscar.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
-    <Content Include="Views\Cart\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -156,8 +166,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="img\" />
-    <Folder Include="SQL\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
