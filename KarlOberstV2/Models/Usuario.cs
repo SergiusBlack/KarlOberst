@@ -27,7 +27,7 @@ namespace KarlOberstV2.Models
         {
             var ret = new Conexiones();
 
-            return ret.ValidaUsuarioPorNombre(nombreUsuario, password);
+            return ret.ValidaUsuarioPorNombre(nombreUsuario, password); 
         }
 
     }
