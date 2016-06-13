@@ -23,6 +23,8 @@ namespace KarlOberstV2.Models
         [Display(Name = "Recordar cuenta")]
         public bool Recordar { get; set; }
 
+        public bool SesionIniciada { get; set; }
+
         public bool EsValido(string nombreUsuario, string password)
         {
             var ret = new Conexiones();

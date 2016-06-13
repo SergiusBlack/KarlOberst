@@ -30,6 +30,9 @@ namespace KarlOberstV2.Controllers
             {
                 if(usuario.EsValido(usuario.NombreUsuario, usuario.Password))
                 {
+                    usuario.SesionIniciada = true;
+
+                    Session["Usuario"] = usuario;
                     FormsAuthentication.SetAuthCookie(usuario.NombreUsuario, true);
                     //FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1, usuario.NombreUsuario, DateTime.Now,
                     //    DateTime.Now.AddDays(30),

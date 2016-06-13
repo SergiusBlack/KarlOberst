@@ -32,5 +32,14 @@ a.navbar-brand{
     overflow:hidden;
 }
 
+#saludo{
+    border-bottom: 1px solid rgba(146, 139, 139, 0.35);
+    border-left: 1px solid rgba(146, 139, 139, 0.35);
+    border-right: 1px solid rgba(146, 139, 139, 0.35);
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+    padding: 2px;
+    box-shadow: 0px 1px 2px;
+}
 
 
