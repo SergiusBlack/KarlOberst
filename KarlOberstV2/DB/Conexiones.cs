@@ -63,7 +63,9 @@ namespace KarlOberstV2.DB
             var data = new DataTable();
             mySDA.Fill(data);
 
-            for(var i = 0; i < data.Rows.Count; i++)
+            conn.Close();
+
+            for (var i = 0; i < data.Rows.Count; i++)
             {
                 ret.Add(new Producto
                 {
@@ -78,6 +80,35 @@ namespace KarlOberstV2.DB
 
             return ret;
         }
+
+        //Login
+        public bool ValidaUsuarioPorNombre(string usuario, string password)
+        {
+            List<Producto> ret = new List<Producto>();
+            MySqlConnection conn = new MySqlConnection("server=localhost;database=karl_oberst;uid=root;password= ;");
+            conn.Open();
+
+            var query = string.Format("SELECT * FROM karl_oberst.usuario where nombre = '{0}' and password = '{1}'", usuario, password);
+
+            MySqlDataAdapter mySDA = new MySqlDataAdapter(query, conn);
+            MySqlCommandBuilder mySCB = new MySqlCommandBuilder(mySDA);
+            var data = new DataTable();
+            mySDA.Fill(data);
+
+            conn.Close();
+
+            return data.Rows.Count == 1;
+        }
+
+        public Role ObtenerRole(string usuario)
+        {
+            Role ret;
+            ret = new Role();
+            ret.tipoRole = Role.Tipo.Admin;
+
+            return ret;
+        }
+
 
         //-------------------------------------------------------------------
 

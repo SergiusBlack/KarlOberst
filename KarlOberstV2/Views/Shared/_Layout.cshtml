@@ -30,7 +30,19 @@
                     @*<li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Store" ? "active" : "")" >@Html.ActionLink("Tienda","Index","Store", new { area = "" }, null)</li>*@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Store" ? "active" : "")">@Html.ActionLink("Login", "Index", "Store", new { area = "" }, null)</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        
+                        <li>@Html.ActionLink("Cerrar sesión", "Logout", "Login", new { area = "" }, null)</li>
+                    }
+                    else
+                    {
+                        <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Login" ? "active" : "")">@Html.ActionLink("Login", "Login", "Login", new { area = "" }, null)</li>
+                       
+                        
+                    }
+
+                    
                     <li><a href="#" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                 </ul>
             </div>
