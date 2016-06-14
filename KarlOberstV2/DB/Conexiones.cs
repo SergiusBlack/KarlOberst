@@ -72,11 +72,36 @@ namespace KarlOberstV2.DB
                     Nombre = data.Rows[i]["name"].ToString(),
                     IdGenero = int.Parse(data.Rows[i]["id_genero"].ToString()),
                     ImgProducto = data.Rows[i]["url"].ToString(),
-                    Descripcion = data.Rows[i]["description"].ToString()
+                    Descripcion = data.Rows[i]["description"].ToString(),
+                    Precio = float.Parse(data.Rows[i]["price"].ToString()),
+                    IdProducto = int.Parse(data.Rows[i]["id_product"].ToString())
 
                 });
             }
 
+
+            return ret;
+        }
+
+        public Producto GetProductById(int id)
+        {
+            Producto ret = new Producto();
+            MySqlConnection conn = new MySqlConnection("server=localhost;database=karl_oberst;uid=root;password= ;");
+            conn.Open();
+
+            var query = string.Format("select * from producto where id_product = {0}", id);
+
+            MySqlDataAdapter mySDA = new MySqlDataAdapter(query, conn);
+            MySqlCommandBuilder mySCB = new MySqlCommandBuilder(mySDA);
+            var data = new DataTable();
+            mySDA.Fill(data);
+
+            conn.Close();
+
+            ret.Nombre = data.Rows[0]["name"].ToString();
+            ret.IdGenero = int.Parse(data.Rows[0]["id_genero"].ToString());
+            ret.Precio = float.Parse(data.Rows[0]["price"].ToString());
+            ret.ImgProducto = data.Rows[0]["url"].ToString();
 
             return ret;
         }

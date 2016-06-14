@@ -137,6 +137,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\Cart.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="SQL\KarlOberst.sql" />
     <Content Include="Web.config">
@@ -145,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
@@ -152,7 +154,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Genero.cs" />
+    <Compile Include="Models\ItemCart.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Usuario.cs" />
