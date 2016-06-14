@@ -15,13 +15,26 @@ namespace KarlOberstV2.Controllers
             return PartialView();
         }
 
-        public ActionResult Add(int idProd)
+        public void Add(int idProd, int cant)
         {
+
             Conexiones con = new Conexiones();
+            //Obtenemos Producto de BD
             Models.Producto prod = con.GetProductById(idProd);
 
-           var msg= String.Format("alert('Se ha insertado {0} al carrito')", prod.Nombre);
-            return Content("<script language='javascript' type='text/javascript'>alert('"+msg+"');</script>");
+            //Rellenamos el objeto ItemCart con los datos del producto + la cantidad
+            Models.ItemCart iC = new Models.ItemCart();
+            iC.Cantidad = cant;
+            iC.Descripcion = prod.Descripcion;
+            iC.Genero = prod.Genero;
+            iC.IdGenero = prod.IdGenero;
+            iC.Precio = prod.Precio;
+            iC.ImgProducto = prod.ImgProducto;
+
+            //Registramos en BD
+
+            
+
         }
 
         // GET: Cart/Details/5
