@@ -43,3 +43,46 @@ a.navbar-brand{
 }
 
 
+.precio{
+    clear: both;
+    color: #cf4c4c;
+    font-style: italic;
+    font-size: large;
+    float: right;
+    margin-right: 4%;
+    margin-top: 25px;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 5px 20px;
+    border-radius: 6px 0 0 0;
+    margin-bottom: -4px;
+    margin-right: -13px;
+    background-color: #e6e3e3;
+}
+
+.add-cart{
+    width: 40%;
+    float: right;
+    color: #fff;
+    background-color: #3276b1;
+    border-color: #285e8e;
+    border-radius: 4px;
+}
+
+.thumbnail{
+    overflow:hidden;
+}
+
+.caption label{
+    width: 50%;
+    float: left;
+}
+
+.caption label input{
+    width: 38%;
+    float: left;
+}
+
+.caption label p{
+    float:left;
+}

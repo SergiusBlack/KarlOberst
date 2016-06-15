@@ -17,9 +17,14 @@
                         <div class="caption">
                             <h3>@producto.Nombre</h3>
                             <p>@producto.Descripcion</p>
-                            <button class="btn btn-primary btn-block add-cart" value="@producto.IdProducto" >Añadir al carrito</button>
-                            @*<a href="@Url.Action("Add","Cart",new {idProd = producto.IdProducto })" class="btn btn-primary btn-block add-cart"  role="button">Añadir al carrito</a>*@
-                            <p class="alert alert-warning text-center">@producto.Precio.ToString()€</p>
+                            <hr />
+                          
+                            <label>
+                                <p>Cantidad: </p>
+                                <input type="number" class="cantidad" id="cantidad" min="1"  value="1"/>
+                            </label>
+                            <button class="add-cart" value="@producto.IdProducto">Añadir al carrito</button>
+                            <p class="precio">@producto.Precio.ToString()€</p>
                         </div>
                     </div>
                 </article>

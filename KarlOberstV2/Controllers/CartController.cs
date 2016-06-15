@@ -37,6 +37,8 @@ namespace KarlOberstV2.Controllers
 
         }
 
+       
+
         // GET: Cart/Details/5
         public ActionResult Details(int id)
         {
