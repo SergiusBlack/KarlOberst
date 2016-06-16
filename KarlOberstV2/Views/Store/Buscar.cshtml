@@ -9,7 +9,7 @@
     <section class="row">
         @foreach (var producto in Model.Productos)
         {
-            <form>
+            <form id="@producto.IdProducto">
                 
                 <article class="col-xs-6 col-md-3">
                     <div class="thumbnail">
@@ -22,13 +22,13 @@
                             <label>
                                 <p>Cantidad: </p>
                                 <input type="number" class="cantidad" id="cantidad" min="1"  value="1"/>
+                                <input type="hidden" id="nombre" name="producto" value="@producto.Nombre" />
                             </label>
                             <button class="add-cart" value="@producto.IdProducto">Añadir al carrito</button>
                             <p class="precio">@producto.Precio.ToString()€</p>
                         </div>
                     </div>
                 </article>
-                
             </form>
         }
 

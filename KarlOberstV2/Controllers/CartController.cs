@@ -15,16 +15,16 @@ namespace KarlOberstV2.Controllers
             return PartialView();
         }
 
-        public void Add(int idProd, int cant)
+        public void Add(string idProd, string cant)
         {
 
             Conexiones con = new Conexiones();
             //Obtenemos Producto de BD
-            Models.Producto prod = con.GetProductById(idProd);
+            Models.Producto prod = con.GetProductById(int.Parse(idProd));
 
             //Rellenamos el objeto ItemCart con los datos del producto + la cantidad
             Models.ItemCart iC = new Models.ItemCart();
-            iC.Cantidad = cant;
+            iC.Cantidad = int.Parse(cant);
             iC.Descripcion = prod.Descripcion;
             iC.Genero = prod.Genero;
             iC.IdGenero = prod.IdGenero;
